@@ -1,0 +1,20 @@
+{
+  "name": "2016-cycling-goal",
+  "version": "1.0.0",
+  "description": "Visualizing progress towards cycling goal with Strava data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+  	"ejs": "2.4.1",
+    "express": "4.13.4"
+  },
+  "engines": {
+    "node": "0.12.7"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "author": "Tommy Giglio"
+}
