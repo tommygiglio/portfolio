@@ -6,8 +6,20 @@
 
 <body>
 
-<h1>Tommy's 2016 Cycling Goal Progress</h1>
+<h1>Tommy's 2016 Cycling Goals</h1>
+<h2><%= milesToGo %> miles to go</h2>
+<h2 style="color:red;"><%= daysSinceLastRide %> days since last ride</h2>
 
+<hr />
+<h2>YTD Totals</h2>
+<h4><%= ytdClimbing %> feet</h4>
+<h4><%= ytdDistance %> miles</h4>
+<h4><%= ytdTime %> hours</h4>
+<h4><%= ytdAverageSpeed %> miles per hour </h4>
+
+<hr />
+<h2>Recent Activity</h2>
+<h4><a href="https://www.strava.com/activities/<%= recentActivityID %>" target="_blank"><%= recentActivityName %></a></h4>
 
 </body>
 </html>
