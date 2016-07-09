@@ -1,0 +1,55 @@
+<pre>
+
+var strava = require("strava-v3");
+var async = require("async");
+var weather = require('weather-js');
+async.parallel([
+  function(callback){
+    strava.athlete.listActivities({
+      'after':'1451606400', // time after Jan 1 2016
+      'id':'2412583', // my account id
+      'access_token':'49e349e2fe0f9a9354d8808df66f4506394b5292'
+    },function(err,payload) {
+      callback(err,payload);
+    });
+  },
+  function(callback){
+    strava.athletes.stats({
+      'id':'2412583',
+      'access_token':'49e349e2fe0f9a9354d8808df66f4506394b5292'
+    },function(err,payload) {
+      callback(err,payload);
+    });
+  },
+  function(callback){
+    weather.find({
+      search: 'Oakland, CA',
+      degreeType: 'F'
+    }, function(err, payload) {
+      callback(err,payload);
+    });
+  }
+], function(err, results) {
+    
+    var activities = results[0];
+    
+    
+    var averageSpeed = 0;
+
+    for (i = 0; i < activities.length; i++) {
+        averageSpeed += activities[i].average_speed;
+    }
+    
+    function milesPerHour(averageSpeed) {
+        return meters*2.23694;
+    }
+    
+    console.log(averageSpeed);
+    
+  }); 
+
+  http://www.flaticon.com/packs/cumulus
+
+  http://stackoverflow.com/questions/12142094/msn-weather-api-list-of-conditions
+
+  </pre>

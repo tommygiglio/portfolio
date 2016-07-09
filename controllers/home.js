@@ -1,7 +1,6 @@
 // Require these modules
 var strava = require("strava-v3");
 var async = require("async");
-var weather = require('weather-js');
 
 // Require these files
 var conversions = require('../requires/conversions');
